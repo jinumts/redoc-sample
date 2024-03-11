@@ -1,0 +1,26 @@
+get:
+  summary: A Video Article
+  tags:
+    - videos
+  description: >-
+    This endpoint allows the client to retrieve a single video article by its id.
+
+
+    For complete documentation, see the v0 API docs:
+    https://developers.forem.com/api/v0#tag/videos/operation/getVideo
+  operationId: getVideo
+  parameters:
+    - name: id
+      in: path
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: successful
+      content:
+        application/json:
+          schema:
+            type: object
+            items:
+              $ref: ..\components\schemas\VideoArticle.yaml

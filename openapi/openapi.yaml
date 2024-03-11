@@ -82,6 +82,8 @@ paths:
     $ref: paths/admin_users.yaml
   /videos:
     $ref: paths/videos.yaml
+  /videos/{id}:
+    $ref: paths/videos_{id}.yaml
 components:
   securitySchemes:
     api-key:
