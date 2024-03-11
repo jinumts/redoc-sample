@@ -84,6 +84,8 @@ paths:
     $ref: paths/videos.yaml
   /videos/{id}:
     $ref: paths/videos_{id}.yaml
+  /audios:
+    $ref: paths/audios.yaml    
 components:
   securitySchemes:
     api-key:

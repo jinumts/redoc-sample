@@ -1,0 +1,27 @@
+description: Representation of an Article with audio
+type: object
+properties:
+  type_of:
+    type: string
+  id:
+    type: integer
+    format: int64
+  path:
+    type: string
+  cloudinary_audio_url:
+    type: string
+  title:
+    type: string
+  user_id:
+    type: integer
+    format: int64
+  audio_duration_in_minutes:
+    type: string
+  audio_source_url:
+    type: string
+  user:
+    description: Author of the article
+    type: object
+    properties:
+      name:
+        type: string
