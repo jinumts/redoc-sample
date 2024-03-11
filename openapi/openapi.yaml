@@ -87,7 +87,9 @@ paths:
   /audios:
     $ref: paths/audios.yaml    
   /notes:
-    $ref: paths/notes.yaml 
+    $ref: paths/notes.yaml
+  /notes/{id}:
+    $ref: paths/notes_{id}.yaml
 components:
   securitySchemes:
     api-key:
