@@ -74,6 +74,8 @@ paths:
     $ref: paths/users_me.yaml
   /employee/me:
     $ref: paths/employee_me.yaml
+  /employee/{id}:
+    $ref: paths/employee_{id}.yaml
   /users/{id}:
     $ref: paths/users_{id}.yaml
   /users/{id}/unpublish:

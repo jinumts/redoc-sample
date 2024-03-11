@@ -2724,6 +2724,41 @@
         }
       }
     },
+    "/employee/{id}": {
+      "get": {
+        "summary": "A employee",
+        "tags": [
+          "employee"
+        ],
+        "description": "This endpoint allows the client to retrieve a single employee, either by id\nor by the employee's username.\n\nFor complete documentation, see the v0 API docs: https://developers.forem.com/api/v0#tag/users/operation/getUser",
+        "operationId": "getEmployee",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "items": {
+                    "$ref": "#/components/schemas/Employee"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/users/{id}": {
       "get": {
         "summary": "A User",
