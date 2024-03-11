@@ -2675,6 +2675,55 @@
         }
       }
     },
+    "/employee/me": {
+      "get": {
+        "summary": "The authenticated employee",
+        "tags": [
+          "employee"
+        ],
+        "description": "This endpoint allows the client to retrieve information about the authenticated employee",
+        "operationId": "getEmployeeMe",
+        "responses": {
+          "200": {
+            "description": "successful",
+            "content": {
+              "application/json": {
+                "example": {
+                  "type_of": "employee",
+                  "id": 1431,
+                  "username": "username480",
+                  "name": "Willy \"Myron\" \\:/ Herzog",
+                  "twitter_username": "twitter480",
+                  "github_username": "github480",
+                  "summary": null,
+                  "location": null,
+                  "website_url": null,
+                  "joined_at": "Apr 14, 2023",
+                  "profile_image": "/uploads/user/profile_image/1431/b547e3a6-5076-44dd-a4f6-9b85022b4e76.jpeg"
+                },
+                "schema": {
+                  "type": "object",
+                  "items": {
+                    "$ref": "#/components/schemas/Employee"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "example": {
+                  "error": "unauthorized",
+                  "status": 401
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/users/{id}": {
       "get": {
         "summary": "A User",
@@ -4094,6 +4143,49 @@
           "text_color_hex": {
             "type": "string",
             "nullable": true
+          }
+        }
+      },
+      "Employee": {
+        "description": "The representation of a employee",
+        "type": "object",
+        "properties": {
+          "type_of": {
+            "type": "string"
+          },
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "username": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "summary": {
+            "type": "string",
+            "nullable": true
+          },
+          "twitter_username": {
+            "type": "string"
+          },
+          "github_username": {
+            "type": "string"
+          },
+          "website_url": {
+            "type": "string",
+            "nullable": true
+          },
+          "location": {
+            "type": "string",
+            "nullable": true
+          },
+          "joined_at": {
+            "type": "string"
+          },
+          "profile_image": {
+            "type": "string"
           }
         }
       },
